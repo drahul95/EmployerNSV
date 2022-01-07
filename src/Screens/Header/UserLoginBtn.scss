@@ -1,0 +1,371 @@
+body {
+  .modal-body {
+    .break {
+      position: relative;
+      span {
+        color: #89939e;
+        background-color: #fff;
+        margin: 0 auto;
+        text-align: center;
+        max-width: 40px;
+        position: relative;
+        z-index: 1;
+      }
+      &::after {
+        position: absolute;
+        content: "";
+        width: 95%;
+        height: 1px;
+        background-color: #ecedf2;
+        top: 16px;
+      }
+    }
+    .otp_div {
+      input[type="number"],
+      input[type="text"] {
+        width: 65px !important;
+        border: none;
+        display: inline-block;
+        margin: 0 10px;
+      }
+    }
+    /* Chrome, Safari, Edge, Opera */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    /* Firefox */
+    input[type="number"] {
+      -moz-appearance: textfield;
+    }
+    .nav-tabs {
+      margin: 0 auto;
+      width: 100%;
+      border-bottom: transparent;
+      display: flex;
+      justify-content: space-between;
+      li.nav-item {
+        padding: 15px 0px !important;
+        flex-basis: 49%;
+        button#seeker-tab {
+          color: #f4b947;
+          background-color: #fdf1da;
+          border-radius: 8px;
+          font-size: 0.75rem;
+          height: 50px;
+          width: 100%;
+        }
+        #seeker-tab.active {
+          background: #f4b947;
+          color: #1c1b1b !important;
+          &::after {
+            width: 0;
+            height: 0;
+          }
+        }
+        button#seeker2-tab {
+          color: #f4b947;
+          background-color: #fdf1da;
+          border-radius: 8px;
+          font-size: 0.75rem;
+          height: 50px;
+          width: 100%;
+        }
+        #seeker2-tab.active {
+          background: #f4b947;
+          color: #1c1b1b !important;
+          &::after {
+            width: 0;
+            height: 0;
+          }
+        }
+        button#employer-tab {
+          color: #2a5798;
+          background-color: #d4ddea;
+          border-radius: 8px;
+          font-size: 0.75rem;
+          height: 50px;
+          width: 100%;
+        }
+        #employer-tab.active {
+          background: #2a5798;
+          color: #fff !important;
+          &::after {
+            width: 0;
+            height: 0;
+          }
+        }
+        button#employer2-tab {
+          color: #2a5798;
+          background-color: #d4ddea;
+          border-radius: 8px;
+          font-size: 0.75rem;
+          height: 50px;
+          width: 100%;
+        }
+        #employer2-tab.active {
+          background: #2a5798;
+          color: #fff !important;
+          &::after {
+            width: 0;
+            height: 0;
+          }
+        }
+      }
+    }
+    .countrycode {
+      flex-basis: 16%;
+      margin-right: 10px;
+    }
+    .form-control:disabled {
+      background: #e7f1fd;
+    }
+    .numberbox {
+      flex-basis: 82%;
+    }
+    #employer {
+      label {
+        margin-bottom: 6px;
+      }
+      input {
+        font-size: 0.75rem;
+        &::placeholder {
+          color: rgba(28, 27, 27, 0.5);
+        }
+      }
+      
+    }
+
+    .social_login {
+      ul {
+        display: flex;
+        justify-content: space-between;
+        li {
+          flex-basis: 48%;
+          display: inline-block;
+          padding: 0 !important;
+          a,
+          button {
+            padding: 8px 28px;
+            border-radius: 8px;
+          }
+          .kep-login-facebook {
+            border: 2px solid #2a5798 !important;
+            background: transparent;
+            color: #2a5798;
+            width: 100%;
+            text-transform: capitalize;
+            font-weight: 400;
+            &:hover {
+              color: #fff;
+              background: #2a5798;
+              .fb_color {
+                .a {
+                  fill: #fff;
+                }
+              }
+            }
+          }
+          .fcb {
+            border: 2px solid #2a5798;
+            padding: 9px 28px;
+            background: transparent;
+            color: #2a5798;
+            width: 100%;
+            text-transform: capitalize;
+            &:hover {
+              color: #fff;
+              background: #2a5798;
+              .fb_color {
+                .a {
+                  fill: #fff;
+                }
+              }
+            }
+          }
+          .gog {
+            border: 2px solid #f34a38 !important;
+            color: #f34a38 !important;
+            border-radius: 8px !important;
+            box-shadow: none !important;
+            display: block !important;
+            width: 100%;
+            text-align: center;
+            padding: 10px 28px !important;
+            &:hover {
+              background-color: #f34a38 !important;
+              color: #fff !important;
+              .g_color {
+                .a {
+                  fill: #fff;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  #passwordmodal {
+    label {
+      margin-bottom: 13px;
+    }
+    .passwordinputarea {
+      position: relative;
+      button {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+      }
+    }
+    .listfrpasswrd {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-bottom: 0;
+      li {
+        color: #707070;
+        font-size: 0.75rem;
+        padding: 0 6px 5px 17px;
+        position: relative;
+        flex-basis: 50%;
+        &::after {
+          position: absolute;
+          content: "";
+          width: 12px;
+          height: 12px;
+          background-color: #e7f1fd;
+          border-radius: 50px;
+          left: 0;
+          top: 3px;
+        }
+      }
+      li.red {
+        color: #df1e1f;
+        &::after {
+          background-color: #df1e1f;
+        }
+      }
+      li.blue {
+        &::after {
+          background-color: #2a5798;
+        }
+      }
+    }
+  }
+  .modal-body {
+    .emplyeer_sectab {
+      justify-content: space-between;
+      li.nav-item {
+        flex-basis: 40%;
+        padding: 15px 0 !important;
+        button.active {
+          background-color: #2a5798 !important;
+          &::after {
+            display: none;
+          }
+        }
+        button {
+          background-color: #e7f1fd !important;
+          border-radius: 8px !important;
+          width: 100%;
+          color: #1c1b1b;
+          &:hover {
+            background-color: #2a5798 !important;
+          }
+        }
+      }
+      li.popoverbtn {
+        flex-basis: 5%;
+        button {
+          border-radius: 50% !important;
+          width: fit-content;
+          padding: 5px !important;
+          box-shadow: none !important;
+          background-color: transparent !important;
+          &:hover {
+            background-color: transparent !important;
+          }
+          .MuiButton-label {
+            background-color: #2a5798;
+            color: #fff;
+            position: relative;
+            top: 5px;
+            font-weight: bold;
+            font-style: italic;
+            padding: 6px 16px;
+            width: fit-content;
+            border-radius: 50%;
+            text-transform: none;
+          }
+        }
+      }
+    }
+  }
+  .infologinpaper {
+    max-width: 480px;
+  }
+  #Groups_Tab_modal {
+    .accordion-item {
+      box-shadow: 0px 2px 18px #24579929;
+      border-radius: 16px !important;
+      border: none;
+      margin-bottom: 10px;
+      .accordion-button {
+        background-color: transparent !important;
+        color: #1c1b1b !important;
+        font-size: 0.875rem;
+        .institute_name_area {
+          flex-basis: 81%;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        .remove_icon {
+          position: absolute;
+          right: 60px;
+          top: 22px;
+          flex-basis: 20%;
+        }
+      }
+      .accordion-button:not(.collapsed) {
+        color: #1c1b1b;
+        background-color: #fff;
+        box-shadow: none;
+      }
+      .accordion-collapse {
+        border-top: 1px solid #d7dde5;
+        .accordion-body {
+          padding: 1rem;
+          form {
+            padding: 0;
+            label {
+              margin-bottom: 13px;
+            }
+            input {
+              font-size: 0.75rem;
+              &::placeholder {
+                color: rgba(28, 27, 27, 0.5);
+              }
+            }
+          }
+        }
+      }
+    }
+    .addbutton {
+      background-color: #e7f1fd;
+      border: 1px solid #2a5798;
+      border-radius: 8px;
+      color: #2a5798;
+      &:hover {
+        color: #2a5798;
+      }
+      &:focus {
+        border: 1px solid #2a5798 !important;
+      }
+    }
+  }
+}

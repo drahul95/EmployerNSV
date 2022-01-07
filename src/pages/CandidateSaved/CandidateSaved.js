@@ -338,13 +338,19 @@ function CandidateSaved() {
           <Grid container direction="row" justifyContent="space-between">
             <Grid item xs={12}>
               <Grid container direction="row" justifyContent="space-between">
-                <Grid item md={9}>
-                  <Typography variant="span" className="pagetitle">
-                    Candidates Saved
-                  </Typography>
+                <Grid item lg={7} md={12}>
+                  <Box component="div" className="dis_flex">
+                    <Button
+                      className="buttonnohover"
+                      startIcon={<BackIcon />}
+                    ></Button>
+                    <Typography variant="span" className="pagetitle">
+                      Candidate Saved
+                    </Typography>
+                  </Box>
                   <Box
                     component="div"
-                    className="dis_flex fullwidth_100percent"
+                    className="dis_flex topheader fullwidth_100percent"
                   >
                     <Autocomplete
                       debug
@@ -371,12 +377,9 @@ function CandidateSaved() {
                         return <TextField {...params} />;
                       }}
                     />
-                    <Button className="darkbluecolor whitecolortext border8 pe-4 ps-4">
-                      Search
-                    </Button>
                   </Box>
                 </Grid>
-                <Grid item md={3}>
+                <Grid item md={5}>
                   <img
                     src={BASE_URL + SavedBG}
                     alt=""
@@ -443,6 +446,49 @@ const search = [
   { name: "Soumya", id: 5 },
   { name: "andugundutandapani", id: 6 },
 ];
+const BackIcon = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="29"
+      height="23.593"
+      viewBox="0 0 29 23.593"
+    >
+      <g id="back" transform="translate(-2.5 -8)">
+        <g
+          id="Group_6948"
+          data-name="Group 6948"
+          transform="translate(2.549 18.814)"
+        >
+          <g id="Group_6947" data-name="Group 6947" transform="translate(0)">
+            <g id="Group_6946" data-name="Group 6946">
+              <path
+                id="Path_3799"
+                data-name="Path 3799"
+                d="M30.568,31.966H3.583a.983.983,0,0,1,0-1.966H30.568a.983.983,0,1,1,0,1.966Z"
+                transform="translate(-2.6 -30)"
+                fill="#2a5798"
+              />
+            </g>
+          </g>
+        </g>
+        <g id="Group_6951" data-name="Group 6951" transform="translate(2.5 8)">
+          <g id="Group_6950" data-name="Group 6950">
+            <g id="Group_6949" data-name="Group 6949">
+              <path
+                id="Path_3800"
+                data-name="Path 3800"
+                d="M14.3,31.593a.97.97,0,0,1-.688-.295L2.795,20.485a.95.95,0,0,1,0-1.376L13.608,8.295a.973.973,0,0,1,1.376,1.376L4.908,19.8,15.034,29.922a.95.95,0,0,1,0,1.376,1,1,0,0,1-.737.295Z"
+                transform="translate(-2.5 -8)"
+                fill="#2a5798"
+              />
+            </g>
+          </g>
+        </g>
+      </g>
+    </svg>
+  );
+};
 const ProfileDrawer = () => {
   return (
     <svg

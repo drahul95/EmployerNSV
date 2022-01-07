@@ -11,7 +11,12 @@ body {
             margin-left: 50px;
             margin-top: 15px;
           }
+          .notinterestedline2 {
+            display: none;
+          }
           .buttondiv {
+            display: flex;
+            align-items: flex-start;
             .infodiv2 {
               padding: 0 0 0 15px;
               min-width: 10px;
@@ -223,6 +228,22 @@ body {
       .buttonbox {
         button {
           padding: 10px 26px !important;
+        }
+      }
+    }
+  }
+  @media (max-width: 1599px) {
+    .applicationreceivedcontent {
+      .canddiv {
+        .topdiv {
+          .cont {
+            .notinterestedline {
+              display: none;
+            }
+            .notinterestedline2 {
+              display: flex;
+            }
+          }
         }
       }
     }

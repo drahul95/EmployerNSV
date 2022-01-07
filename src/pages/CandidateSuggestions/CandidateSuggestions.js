@@ -340,7 +340,10 @@ function CandidateSuggestions() {
               <Grid container direction="row" justifyContent="space-between">
                 <Grid item lg={7} md={12}>
                   <Box component="div" className="dis_flex">
-                    <Button startIcon={<BackIcon />}></Button>
+                    <Button
+                      className="buttonnohover"
+                      startIcon={<BackIcon />}
+                    ></Button>
                     <Typography variant="span" className="pagetitle">
                       Candidates Suggestions
                     </Typography>

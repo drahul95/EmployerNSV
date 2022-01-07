@@ -1,0 +1,23 @@
+body {
+  .recsrchdiv {
+    .text {
+      color: #fff;
+      font-weight: 500;
+    }
+    ul {
+      padding-left: 0;
+      padding-top: 15px;
+      li {
+        background-color: #5f80b1;
+        padding: 6px 12px;
+        display: inline-block;
+        margin-right: 10px;
+        border-radius: 8px;
+        span {
+          color: #fff;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}

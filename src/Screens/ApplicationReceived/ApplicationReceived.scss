@@ -1,0 +1,482 @@
+body {
+  .applicationreceivedcontent {
+    padding-right: 50px;
+    .MuiTooltip-arrow {
+      background-color: #fff;
+    }
+    .canddiv {
+      .topdiv {
+        .cont {
+          .notinterestedline2 {
+            display: none;
+          }
+          .buttondiv {
+            display: flex;
+            align-items: flex-start;
+            .infodiv2 {
+              padding: 0 0 0 15px;
+              min-width: 10px;
+              width: 10px;
+            }
+          }
+        }
+      }
+      .botdiv {
+        .botbuttondiv {
+          button {
+            margin-bottom: 10px;
+          }
+        }
+        .optdiv {
+          .appliedbox {
+            padding: 12px 16px;
+            border-radius: 8px;
+          }
+        }
+      }
+    }
+    .pagetitle {
+      letter-spacing: 0px;
+      font-size: 45px;
+      line-height: 1.3em;
+      font-weight: bold;
+      color: #1c1b1b;
+      margin: 25px 0;
+      display: block;
+      max-width: 500px;
+    }
+    .MuiGrid-grid-xl-4 {
+      .whitebg_shadow_border16 {
+        height: 100%;
+        display: grid;
+        align-items: center;
+        .bottomstatus {
+          .jobcontdiv {
+            flex-basis: 62%;
+          }
+        }
+      }
+    }
+    .sortbybtn {
+      background-color: transparent;
+      box-shadow: none;
+      color: #1c1b1b;
+      &:hover {
+        background-color: transparent;
+        box-shadow: none;
+      }
+    }
+    .topheader {
+      .BlueSelectDropdown {
+        .noBeforeAfter {
+          padding: 6px 10px;
+          input {
+            padding-left: 15px;
+          }
+        }
+      }
+    }
+    .headtitle {
+      display: flex;
+      span.darkcolortext {
+        padding-right: 8px;
+      }
+      button {
+        padding: 9px 13px;
+        min-width: fit-content;
+        .MuiButton-startIcon {
+          margin-right: 0;
+        }
+      }
+    }
+    .bg_img {
+      width: 400px;
+    }
+    button {
+      text-transform: none;
+    }
+    .listarea {
+      .button-area {
+        justify-content: space-between;
+        button {
+          flex-basis: 48%;
+        }
+      }
+    }
+    .listdiv {
+      .activebtn {
+        .greenbox {
+          width: 36px;
+          height: 36px;
+          background-color: #199b4d;
+          border-radius: 4px 0 0 4px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .statusbox {
+          padding: 0px 8px;
+          background: #def0e5;
+          border: 1px solid #239a50;
+          border-radius: 0 4px 4px 0;
+          height: 36px;
+          text-transform: capitalize;
+          display: flex;
+          align-items: center;
+        }
+      }
+      .resumebtn {
+        .blackbox {
+          width: 36px;
+          height: 36px;
+          background-color: #1c1b1b;
+          border-radius: 4px 0 0 4px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .statusbox {
+          padding: 0px 8px;
+          background: #ececec;
+          border: 1px solid #1c1b1b;
+          border-radius: 0 4px 4px 0;
+          height: 36px;
+          display: flex;
+          text-transform: capitalize;
+          align-items: center;
+        }
+      }
+      .repostbtn {
+        .statusbox {
+          padding: 0px 12px;
+          background: #f6b333;
+          color: #fff;
+          border-radius: 4px;
+          height: 36px;
+          display: flex;
+          text-transform: capitalize;
+          align-items: center;
+        }
+      }
+      .extendbtn {
+        .statusbox {
+          padding: 0px 12px;
+          background: #f6b333;
+          color: #fff;
+          border-radius: 4px;
+          height: 36px;
+          display: flex;
+          text-transform: capitalize;
+          align-items: center;
+        }
+      }
+      .suspendbtn {
+        .statusbox {
+          padding: 0px 12px;
+          background: #fde3e2;
+          border: 1px solid #f1453d;
+          color: #1c1b1b;
+          border-radius: 4px;
+          height: 36px;
+          display: flex;
+          text-transform: capitalize;
+          align-items: center;
+        }
+      }
+      .infoarea {
+        height: 20px;
+        position: relative;
+        top: 10px;
+      }
+    }
+    .savedboxdiv {
+      background-color: #e7f1fd;
+      border: 1px solid #d1e5ff;
+      border-radius: 16px;
+      padding: 20px;
+      .titlediv {
+        .heading {
+          font-size: 1.125rem;
+          display: block;
+          font-weight: 700;
+        }
+        .subheading {
+          font-size: 0.875rem;
+          color: #2a5798;
+          display: block;
+        }
+      }
+      .iconreq {
+        padding-right: 20px;
+        ul {
+          padding-bottom: 0;
+          li {
+            font-size: 0.875rem;
+          }
+        }
+      }
+      .leftarrowbtn {
+        padding-right: 16px !important;
+      }
+      .rightarrowbtn {
+        padding-left: 16px !important;
+      }
+      .buttonbox {
+        button {
+          padding: 10px 26px !important;
+        }
+      }
+    }
+  }
+  @media (max-width: 1599px) {
+    .applicationreceivedcontent {
+      .canddiv {
+        .topdiv {
+          .cont {
+            .notinterestedline {
+              display: none;
+            }
+            .notinterestedline2 {
+              display: flex;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 1300px) {
+    .applicationreceivedcontent {
+      .bg_img {
+        width: 380px;
+      }
+      .pagetitle {
+        font-size: 2.6rem;
+      }
+      .autocompdiv {
+        .WhiteSelectDropdown {
+          width: 180px;
+          .noBeforeAfter {
+            .noborderinput {
+              overflow: hidden;
+              text-overflow: ellipsis;
+              word-break: break-word;
+              width: 50%;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media only screen and (max-width: 1279px) {
+    .applicationreceivedcontent {
+      padding-right: 8px;
+      .bg_img {
+        display: none;
+      }
+      .jdlistul {
+        display: block;
+      }
+
+      .sortbydiv {
+        .WhiteSelectDropdown {
+          width: 130px;
+          .noBeforeAfter {
+            .noborderinput {
+              overflow: hidden;
+              text-overflow: ellipsis;
+              word-break: break-word;
+              width: 50%;
+            }
+          }
+        }
+      }
+      .canddiv {
+        .botdiv {
+          flex-direction: column;
+        }
+      }
+      .MuiGrid-grid-xl-4 {
+        .whitebg_shadow_border16 {
+          padding: 35px 22px !important;
+        }
+      }
+    }
+  }
+  @media (max-width: 1022px) {
+    .applicationreceivedcontent {
+      .savedboxdiv {
+        .contentdiv {
+          display: block;
+          .titlediv {
+            margin-bottom: 15px;
+          }
+          .buttonbox {
+            display: block;
+            margin-bottom: 15px !important;
+            button {
+              padding: 10px 26px !important;
+              width: 100%;
+              margin-bottom: 10px;
+            }
+          }
+        }
+        .iconreq ul {
+          padding-bottom: 15px;
+          li {
+            display: block;
+          }
+        }
+        .numcandsugg {
+          align-items: center;
+          span {
+            margin-top: 0 !important;
+          }
+        }
+        .rightarrowbtn {
+          padding-left: 0px !important;
+        }
+        .leftarrowbtn {
+          padding-right: 0px !important;
+        }
+      }
+    }
+  }
+  @media only screen and (max-width: 992px) {
+    .applicationreceivedcontent {
+      .pagetitle {
+        font-size: 2rem;
+      }
+      .topheader {
+        .BlueSelectDropdown {
+          margin-right: 0 !important;
+        }
+      }
+      .canddiv {
+        .botdiv {
+          .optdiv {
+            .appliedbox {
+              margin-bottom: 10px;
+              width: fit-content;
+            }
+          }
+        }
+      }
+      .multi-selection {
+        display: block;
+        .buttondiv {
+          display: block;
+          width: 100%;
+          button {
+            margin: 0 0 10px;
+            width: 100%;
+          }
+        }
+        .sortbydiv {
+          width: fit-content;
+          .WhiteSelectDropdown {
+            width: 190px;
+            margin: 0 0 0 auto;
+          }
+        }
+      }
+      .autocompdiv {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .WhiteSelectDropdown {
+          flex-basis: 49%;
+          margin-right: 0 !important;
+          margin-bottom: 15px;
+        }
+        button.redcolor {
+          flex-basis: 100%;
+          margin-bottom: 15px;
+          padding: 6px;
+        }
+        .gogsheet_csvarea {
+          margin: 0 !important;
+          width: 100%;
+          justify-content: space-between;
+          button {
+            flex-basis: 49%;
+            margin-right: 0 !important;
+          }
+        }
+      }
+      .MuiGrid-grid-xl-4 {
+        .whitebg_shadow_border16 {
+          .bottomstatus {
+            flex-direction: column;
+            .statusdiv {
+              flex-basis: 100%;
+              margin-top: 15px !important;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 767px) {
+    .applicationreceivedcontent {
+      .canddiv {
+        .middiv {
+          .midcont {
+            svg.bottom-1 {
+              bottom: 0 !important;
+            }
+            .title {
+              position: relative;
+              top: -6px;
+            }
+            .text {
+              position: relative;
+              top: -6px;
+              left: 4px;
+            }
+          }
+        }
+      }
+
+      .canddiv {
+        .topdiv {
+          .cont {
+            .notinterestedline {
+              margin-left: 0px;
+              margin-bottom: 15px;
+              margin-top: 15px;
+            }
+            .buttondiv {
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: space-between;
+              position: relative;
+              .infodiv2 {
+                padding: 0 !important;
+                min-width: 15px;
+                flex-basis: 0;
+                position: absolute;
+                top: 0;
+                left: 47%;
+              }
+              button {
+                margin: 0 0 15px 0 !important;
+                flex-basis: 45%;
+              }
+            }
+          }
+        }
+        .botdiv {
+          .optdiv {
+            flex-basis: 100%;
+            margin: 0 !important;
+            div.marginautoright {
+              margin: 0 !important;
+              display: flex;
+              width: 100%;
+              flex-wrap: wrap;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,12 +1,20 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import "antd/es/input/style/index.css";
+import "antd/es/select/style/index.css";
+import "antd/es/cascader/style/index.css";
+import "antd/dist/antd.css";
 import "./index.scss";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import { Provider } from "react-redux";
+import { store } from "./Redux/store";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById("root")
 );

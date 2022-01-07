@@ -1,0 +1,12 @@
+.input.ant-input {
+  background-color: #1c1b1b;
+}
+
+.ant-input-affix-wrapper,
+input.ant-input {
+  background-color: #e7f1fd;
+}
+
+.ant-input-affix-wrapper:not(.ant-input-affix-wrapper-disabled):hover {
+  border-color: #df1e1f;
+}

@@ -1,0 +1,571 @@
+body {
+  .notifi_div_area {
+    position: absolute;
+    width: 390px;
+    right: 0;
+    top: 0;
+    z-index: 2;
+    transition: 0.3s ease-in-out;
+    span {
+      font-size: 14px !important;
+    }
+    .notfibutton {
+      border-top-left-radius: 16px;
+      border-bottom-left-radius: 16px;
+      width: fit-content;
+      cursor: pointer;
+      position: absolute;
+      left: -58px;
+      display: none;
+      top: 0px;
+    }
+    .notifi_div {
+      display: block;
+      .whitebg {
+        padding-top: 20px;
+        border-top-left-radius: 16px;
+        border-bottom-left-radius: 16px;
+        .nav-tabs {
+          border-bottom: transparent;
+          .nav-item {
+            flex-basis: 50%;
+            .nav-link {
+              width: 100%;
+              padding: 0px 36px 15px;
+              border-color: #fff #fff #d7dde5 !important;
+
+              span {
+                font-weight: 700;
+                color: #1c1b1b !important;
+              }
+              &:focus {
+                border-bottom: 2px solid #2a5798 !important;
+                color: #1c1b1b;
+              }
+            }
+            .active {
+              border-bottom: 2px solid #2a5798 !important;
+              color: #1c1b1b;
+            }
+          }
+        }
+        .tab-content {
+          padding: 10px;
+          .srchbox {
+            padding: 5px 12px;
+            display: flex;
+            .srch {
+              background-color: #e7f1fd;
+              border: 1px solid #d1e5ff;
+              border-right: transparent;
+              border-top-left-radius: 8px;
+              border-bottom-left-radius: 8px;
+              padding: 10px 12px;
+            }
+            input {
+              background-color: #e7f1fd;
+              border: 1px solid #d1e5ff !important;
+              border-left: transparent !important;
+              border-top-right-radius: 8px;
+              border-bottom-right-radius: 8px;
+              padding: 8px 12px;
+              color: #1c1b1b;
+              width: 100%;
+              &::placeholder {
+                color: #1c1b1b;
+              }
+            }
+          }
+          .filter {
+            padding: 5px 12px 10px;
+            span:not(.num) {
+              color: #1c1b1b !important;
+            }
+          }
+          .panel {
+            padding: 5px 12px;
+            max-height: 550px;
+            overflow-y: scroll;
+            /* width */
+            &::-webkit-scrollbar {
+              width: 5px;
+            }
+
+            /* Track */
+            &::-webkit-scrollbar-track {
+              background: transparent;
+            }
+
+            /* Handle */
+            &::-webkit-scrollbar-thumb {
+              background: #888;
+            }
+
+            /* Handle on hover */
+            &::-webkit-scrollbar-thumb:hover {
+              background: #555;
+            }
+            .new_notifi,
+            .early_notifi {
+              span {
+                color: #1c1b1b !important;
+                font-size: 20px !important;
+              }
+              .newnotifidiv {
+                background: #e7f1fd;
+                border-radius: 8px;
+                padding: 10px 15px;
+                margin-bottom: 15px;
+                .image {
+                  position: relative;
+                  &::after {
+                    position: absolute;
+                    content: "";
+                    width: 8px;
+                    height: 8px;
+                    background-color: #2a5798;
+                    bottom: 15px;
+                    border-radius: 50%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                  }
+                }
+                .text_area {
+                  padding-left: 12px;
+                  position: relative;
+                  width: 100%;
+                  span.title {
+                    font-size: 18px !important;
+                    font-weight: 700 !important;
+                    display: block;
+                    position: relative;
+                    top: 8px;
+                  }
+                  span.time {
+                    margin: 0 0.5rem 0 auto;
+                    font-size: 12px !important;
+                    color: #666666 !important;
+                    line-height: 1.1em !important;
+                    position: absolute;
+                    font-weight: normal !important;
+                    right: 0;
+                    top: 8px;
+                  }
+                  span.msglist {
+                    font-size: 15px !important;
+                    font-weight: 700 !important;
+                    display: block;
+                    padding-top: 12px;
+                    padding-bottom: 8px;
+                  }
+                }
+              }
+              .oldnotifidiv {
+                background: #fff;
+                border-radius: 8px;
+                padding: 10px 15px;
+                margin-bottom: 15px;
+                box-shadow: 0px 2px 12px #24579929;
+                .image {
+                  position: relative;
+                }
+                .text_area {
+                  padding-left: 12px;
+                  position: relative;
+                  width: 100%;
+                  span.title {
+                    font-size: 18px !important;
+                    font-weight: 700 !important;
+                    display: block;
+                    position: relative;
+                    top: 8px;
+                  }
+                  span.time {
+                    margin: 0 0.5rem 0 auto;
+                    font-size: 12px !important;
+                    color: #666666 !important;
+                    line-height: 1.1em !important;
+                    position: absolute;
+                    font-weight: normal !important;
+                    right: 0;
+                    top: 8px;
+                  }
+                  span.msglist {
+                    font-size: 15px !important;
+                    font-weight: normal !important;
+                    display: block;
+                    padding-top: 12px;
+                    padding-bottom: 8px;
+                  }
+                }
+              }
+            }
+          }
+        }
+        #calendar {
+          .nav-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            .nav-item {
+              flex-basis: 32%;
+              .nav-link {
+                padding: 10px 16px;
+                border-bottom: 2px solid transparent;
+                border-color: #fff #fff #e7f1fd !important;
+                background-color: #e7f1fd;
+                color: #1c1b1b;
+                border-radius: 8px;
+                font-size: 14px;
+              }
+              .active {
+                border-bottom: 2px solid transparent !important;
+                background-color: #2a5798;
+                border-color: #fff #fff #2a5798 !important;
+                color: #fff;
+              }
+            }
+          }
+          #CalendarContent {
+            .emptyday {
+              padding: 65px 25px;
+              img {
+                width: 100%;
+              }
+              span {
+                color: #1c1b1b !important;
+                text-align: center;
+                font-size: 20px !important;
+              }
+            }
+            .daylist {
+              .daydiv {
+                div {
+                  span.date {
+                    color: #2a5798 !important;
+                    font-size: 15px !important;
+                    font-weight: 700;
+                    display: block;
+                    margin-bottom: 8px;
+                  }
+                  span.year {
+                    color: #1c1b1b !important;
+                    font-size: 13px !important;
+                    font-weight: 500;
+                    display: block;
+                  }
+                }
+                .arrow_div {
+                  margin-top: 8px;
+                }
+              }
+              .schedulediv {
+                max-height: 550px;
+                overflow-y: scroll;
+                /* width */
+                &::-webkit-scrollbar {
+                  width: 5px;
+                }
+
+                /* Track */
+                &::-webkit-scrollbar-track {
+                  background: transparent;
+                }
+
+                /* Handle */
+                &::-webkit-scrollbar-thumb {
+                  background: #888;
+                }
+
+                /* Handle on hover */
+                &::-webkit-scrollbar-thumb:hover {
+                  background: #555;
+                }
+                .title {
+                  color: #1c1b1b !important;
+                  font-size: 18px !important;
+                  display: block;
+                  line-height: 1.1em !important;
+                  margin: 20px 0;
+                }
+                .blueschedulediv {
+                  margin-bottom: 10px;
+                  .d-flex {
+                    justify-content: space-between;
+                    .time {
+                      border-radius: 16px;
+                      background-color: #e7f1fd;
+                      padding: 8px 14px;
+                      height: fit-content;
+                      margin-right: 10px;
+                      span {
+                        color: #2a5798 !important;
+                        display: block;
+                        text-align: center;
+                        font-size: 13px !important;
+                      }
+                    }
+                  }
+                  .roundsdiv {
+                    border-radius: 16px;
+                    background-color: #e7f1fd;
+                    padding: 8px 14px;
+                    width: 100%;
+                    .title {
+                      font-size: 14px !important;
+                      margin: 5px 0;
+                      font-weight: bold;
+                    }
+                    .subtext {
+                      font-weight: 400 !important;
+                      color: #1c1b1b !important;
+                      display: block;
+                      margin: 5px 0;
+                      font-size: 13px !important;
+                    }
+                    .dis_flex_no_space {
+                      img {
+                        margin-right: 8px;
+                        width: 50px;
+                      }
+                      span {
+                        font-size: 13px !important;
+                        color: #1c1b1b !important;
+                        display: block;
+                        margin-bottom: 5px;
+                      }
+                    }
+                  }
+                }
+
+                .yellschedulediv {
+                  margin-bottom: 10px;
+                  .d-flex {
+                    justify-content: space-between;
+                    .time {
+                      border-radius: 16px;
+                      background-color: #fef6e7;
+                      padding: 8px 14px;
+                      height: fit-content;
+                      margin-right: 10px;
+                      span {
+                        color: #f6b333 !important;
+                        display: block;
+                        text-align: center;
+                        font-size: 13px !important;
+                      }
+                    }
+                  }
+                  .roundsdiv {
+                    border-radius: 16px;
+                    background-color: #fef6e7;
+                    padding: 8px 14px;
+                    width: 100%;
+                    .title {
+                      font-size: 14px !important;
+                      margin: 5px 0;
+                      font-weight: bold;
+                    }
+                    .subtext {
+                      font-weight: 400 !important;
+                      color: #1c1b1b !important;
+                      display: block;
+                      margin: 5px 0;
+                      font-size: 13px !important;
+                    }
+                    .dis_flex_no_space {
+                      img {
+                        margin-right: 8px;
+                        width: 50px;
+                      }
+                      span {
+                        font-size: 13px !important;
+                        color: #1c1b1b !important;
+                        display: block;
+                        margin-bottom: 5px;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  #notifi_filter_div {
+    span {
+      color: #1c1b1b !important;
+    }
+  }
+  .filter_btn {
+    position: relative;
+    .filter_num {
+      position: absolute;
+      padding: 0px 5px;
+      border-radius: 50%;
+      font-size: 8px !important;
+      background-color: #fc4747;
+      color: #fff !important;
+      top: 0;
+      right: -10px;
+      span {
+        font-size: 9px !important;
+      }
+    }
+  }
+  @media only screen and (max-width: 1600px) {
+    .notifi_div_area {
+      .notfibutton {
+        display: block;
+        right: 0;
+        left: unset;
+      }
+      .notifi_div {
+        display: none;
+        .whitebg {
+          border-top-left-radius: 0px;
+        }
+      }
+    }
+  }
+  @media only screen and (max-width: 992px) {
+    .notifi_div_area .notifi_div .whitebg .tab-content .panel .new_notifi span,
+    .notifi_div_area
+      .notifi_div
+      .whitebg
+      .tab-content
+      .panel
+      .early_notifi
+      span {
+      font-size: 16px !important;
+    }
+    .notifi_div_area
+      .notifi_div
+      .whitebg
+      .tab-content
+      .panel
+      .new_notifi
+      .newnotifidiv
+      .text_area
+      span.title,
+    .notifi_div_area
+      .notifi_div
+      .whitebg
+      .tab-content
+      .panel
+      .early_notifi
+      .newnotifidiv
+      .text_area
+      span.title,
+    .notifi_div_area
+      .notifi_div
+      .whitebg
+      .tab-content
+      .panel
+      .new_notifi
+      .oldnotifidiv
+      .text_area
+      span.title,
+    .notifi_div_area
+      .notifi_div
+      .whitebg
+      .tab-content
+      .panel
+      .early_notifi
+      .oldnotifidiv
+      .text_area
+      span.title {
+      font-size: 16px !important;
+    }
+    .notifi_div_area
+      .notifi_div
+      .whitebg
+      .tab-content
+      .panel
+      .new_notifi
+      .newnotifidiv
+      .text_area
+      span.msglist,
+    .notifi_div_area
+      .notifi_div
+      .whitebg
+      .tab-content
+      .panel
+      .early_notifi
+      .newnotifidiv
+      .text_area
+      span.msglist {
+      font-size: 14px !important;
+    }
+  }
+
+  @media only screen and (max-width: 576px) {
+    .notifi_div_area {
+      width: 280px;
+      .notifi_div {
+        .whitebg {
+          .nav-tabs {
+            display: block;
+            .nav-item {
+              margin-top: 10px;
+            }
+          }
+          .tab-content {
+            .panel {
+              .new_notifi {
+                .newnotifidiv,
+                .oldnotifidiv {
+                  .dis_flex_no_space {
+                    display: block;
+                    text-align: center;
+                  }
+                  .text_area {
+                    span.time {
+                      top: unset;
+                      bottom: 0;
+                    }
+                  }
+                }
+              }
+              .early_notifi {
+                .newnotifidiv,
+                .oldnotifidiv {
+                  .dis_flex_no_space {
+                    display: block;
+                    text-align: center;
+                  }
+                  .text_area {
+                    span.time {
+                      top: unset;
+                      bottom: 0;
+                    }
+                  }
+                }
+              }
+            }
+          }
+          #calendar {
+            #CalendarContent {
+              .daylist {
+                .schedulediv {
+                  .blueschedulediv,
+                  .yellschedulediv {
+                    .d-flex {
+                      display: block !important;
+                      .time {
+                        margin-right: 0;
+                        margin-bottom: 15px;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

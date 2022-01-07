@@ -1,0 +1,53 @@
+body {
+  background-color: #fff;
+  .aboutpagediv {
+    padding-bottom: 120px;
+    .title {
+      font-size: 58px;
+      margin-top: 30px;
+      margin-bottom: 15px;
+      display: block;
+      font-weight: bold;
+    }
+    .tagsul {
+      padding-left: 0 !important;
+      li {
+        display: inline-block;
+        margin-right: 15px;
+      }
+    }
+    textarea {
+      resize: none;
+    }
+  }
+  @media only screen and (max-width: 1440px) {
+    .aboutpagediv {
+      .title {
+        font-size: 48px;
+      }
+    }
+  }
+  @media only screen and (max-width: 992px) {
+    .aboutpagediv {
+      .row.py-5{
+        padding-top: 0rem !important;
+        padding-bottom: 0rem !important;
+      }
+      .title{
+        line-height: 90px;
+        margin: 0;
+      }
+      .col-lg-6 {
+        img.align-right {
+          float: none;
+          display: block;
+          margin: 0 auto;
+        }
+      }
+      .font16 {
+        font-size: 14px;
+        line-height: 1.1em;
+      }
+    }
+  }
+}

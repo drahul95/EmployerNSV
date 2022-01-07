@@ -1,0 +1,117 @@
+body {
+  .faqpagediv {
+    .title {
+      font-size: 58px;
+      font-weight: bold;
+      display: block;
+      line-height: 160px;
+    }
+    .srchdiv {
+      .srcharea {
+        width: 70%;
+        margin-right: 15px;
+        .srch {
+          background-color: #e7f1fd;
+          border: 1px solid #d1e5ff;
+          border-right: 1px solid transparent;
+          padding: 12px 16px;
+          border-top-left-radius: 8px;
+          border-bottom-left-radius: 8px;
+        }
+        input {
+          width: 100%;
+          background-color: #e7f1fd;
+          border: 1px solid #d1e5ff !important;
+          border-left: 1px solid transparent !important;
+          padding: 12px 5px;
+          border-top-right-radius: 8px;
+          border-bottom-right-radius: 8px;
+          color: #1c1b1b;
+          &::placeholder {
+            color: #1c1b1b;
+          }
+        }
+      }
+    }
+    img {
+      position: relative;
+      top: 70px;
+    }
+    .accordion-item {
+      border: none;
+      .accordion-button {
+        background: #ffffff 0% 0% no-repeat padding-box;
+        box-shadow: 0px 2px 18px #24579929;
+        border-radius: 16px;
+        margin-bottom: 15px;
+        padding-top: 25px;
+        padding-bottom: 25px;
+
+        &:not(.collapsed) {
+          color: #1c1b1b;
+          background-color: #fff;
+          box-shadow: 0px 2px 18px #24579929;
+        }
+        &:focus {
+          box-shadow: 0px 2px 18px #24579929 !important;
+        }
+      }
+      .collapsed {
+        border-bottom-right-radius: 16px !important;
+        border-bottom-left-radius: 16px !important;
+      }
+    }
+  }
+  @media only screen and (max-width: 1440px) {
+    .faqpagediv {
+      .title {
+        font-size: 48px;
+      }
+      img {
+        width: 100%;
+        top: 110px;
+      }
+      .font18 {
+        font-size: 16px;
+        line-height: 1.1em;
+      }
+      .font16 {
+        font-size: 14px;
+        line-height: 1.1em;
+      }
+    }
+  }
+  @media only screen and (max-width: 992px) {
+    .faqpagediv {
+      .title{
+        line-height: 90px;
+      }
+      img {
+        width: 500px;
+        top: 0;
+        display: block;
+        margin: 30px auto 0;
+      }
+    }
+  }
+  @media only screen and (max-width: 576px) {
+    .faqpagediv {
+      img {
+        width: 100%;
+        top: 0;
+        display: block;
+        margin: 30px auto 0;
+      }
+      .srchdiv.dis_flex_no_space {
+        display: block;
+        .srcharea {
+          width: 100%;
+        }
+        button {
+          margin-top: 15px;
+          width: 100%;
+        }
+      }
+    }
+  }
+}

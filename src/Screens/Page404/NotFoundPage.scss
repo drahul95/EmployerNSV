@@ -1,0 +1,35 @@
+body {
+  .notpagediv {
+    img{
+      margin: 30px auto 0;
+      display: block;
+    }
+    .text_cont {
+      text-align: center;
+      .title {
+        font-size: 95px;
+        color: #2a5798;
+        display: block;
+        text-align: center;
+        margin: 15px 0;
+        font-weight: bold;
+      }
+      .subtext {
+        font-size: 32px;
+        line-height: 1.1em;
+        color: #1c1b1b;
+        display: block;
+        text-align: center;
+        margin-bottom: 50px;
+      }
+      button {
+        font-size: 16px;
+        color: #fff;
+        padding: 12px 46px;
+        border-radius: 8px;
+        border: none;
+        background-color: #2a5798;
+      }
+    }
+  }
+}
