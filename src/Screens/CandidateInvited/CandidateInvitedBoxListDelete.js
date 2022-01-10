@@ -1,20 +1,108 @@
 import React from "react";
-import { Typography, Box, Button, List, ListItem } from "@material-ui/core";
+import "./CandidateInvited.scss";
+import {
+  Typography,
+  Box,
+  List,
+  ListItem,
+  Button,
+  Modal,
+  Backdrop,
+  Fade,
+} from "@material-ui/core";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import StackImages from "../../images/stackimage.png";
 require("dotenv").config();
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
-function CandidateInvitedBoxList() {
+function CandidateInvitedBoxListDelete() {
+  const [openmodaleditconfirm, setOpenModaleditconfirm] = React.useState(false);
+
+  const handleeditconfirmOpen = () => {
+    setOpenModaleditconfirm(true);
+  };
+
+  const handleeditconfirmClose = () => {
+    setOpenModaleditconfirm(false);
+  };
   return (
     <Box
       component="div"
       className="listdiv whitebg_shadow_border16 pt-4 pb-4 pe-4 ps-4 mb-2"
     >
-      <Typography variant="span" className="title font16 darkcolortext block">
-        Primary and Upper Primary School Math and Chemistry Teacher
-      </Typography>
+      <Box component="div" className="headtitle">
+        <Typography variant="span" className="title font16 darkcolortext block">
+          Primary and Upper Primary School Math and Chemistry Teacher
+        </Typography>
+        <Box component="div" className="editbtn marginautoright">
+          <Button
+            variant="button"
+            startIcon={<DeleteIconButton />}
+            onClick={handleeditconfirmOpen}
+            className="transparentbtn buttonnohover"
+          ></Button>
+        </Box>
+        <Modal
+          aria-labelledby="transition-modal-title"
+          aria-describedby="transition-modal-description"
+          className="material-modal"
+          open={openmodaleditconfirm}
+          onClose={handleeditconfirmClose}
+          closeAfterTransition
+          BackdropComponent={Backdrop}
+          BackdropProps={{
+            timeout: 500,
+          }}
+        >
+          <Fade in={openmodaleditconfirm}>
+            <Box component="div" className="modalcontsmall text-center pt-4">
+              <DeleteIconButton />
+              <Typography
+                variant="span"
+                id="transition-modal-description"
+                className="mb-2 mt-3 font16 text-center px-20 block"
+              >
+                Are you sure you want to delete this Private Job?
+              </Typography>
+              <Box component="div" className="">
+                <Box
+                  component="div"
+                  className="dis_flex buttonareadiv maincontjobpost"
+                  justifyContent="space-between"
+                >
+                  <Button
+                    className="border8 me-3 lightbluecolor"
+                    onClick={(e) => {
+                      handleeditconfirmClose();
+                    }}
+                    closeAfterTransition
+                    BackdropComponent={Backdrop}
+                    BackdropProps={{
+                      timeout: 500,
+                    }}
+                  >
+                    No
+                  </Button>
+                  <Button
+                    className="border8 darkbluecolor whitecolortext"
+                    onClick={(e) => {
+                      handleeditconfirmClose();
+                    }}
+                    closeAfterTransition
+                    BackdropComponent={Backdrop}
+                    BackdropProps={{
+                      timeout: 500,
+                    }}
+                  >
+                    Yes
+                  </Button>
+                </Box>
+              </Box>
+            </Box>
+          </Fade>
+        </Modal>
+      </Box>
       <Typography
         variant="span"
         className="subtitle font14 blackcolortext mt-2 block"
@@ -82,13 +170,13 @@ function CandidateInvitedBoxList() {
         <Box component="div" className="marginautoright">
           <Typography
             variant="span"
-            className="heading font14 blackcolortext text-center block mb-2"
+            className="heading font14 blackcolortext fontweight700 text-center block mb-2"
           >
             Visible Till
           </Typography>
           <Typography
             variant="span"
-            className="subheading redcolortext font14 block text-right"
+            className="subheading blackcolortext font14 block text-right"
           >
             25th, June 2021
           </Typography>
@@ -97,7 +185,54 @@ function CandidateInvitedBoxList() {
     </Box>
   );
 }
-export default CandidateInvitedBoxList;
+export default CandidateInvitedBoxListDelete;
+const ClosegreyBtn = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="16"
+      height="16"
+      viewBox="0 0 16 16"
+    >
+      <g
+        id="Group_371"
+        data-name="Group 371"
+        transform="translate(-331.639 -94.639)"
+      >
+        <g id="octicon:x-24" transform="translate(331.639 94.639)">
+          <path
+            id="Vector"
+            d="M.27.293a.923.923,0,0,1,1.3,0L7.988,6.7,14.4.293a.921.921,0,1,1,1.3,1.3L9.291,8l6.416,6.406a.921.921,0,1,1-1.3,1.3L7.988,9.3,1.572,15.707a.921.921,0,0,1-1.3-1.3L6.685,8,.27,1.594a.919.919,0,0,1,0-1.3Z"
+            transform="translate(0 0)"
+            fill="#1c1b1b"
+          />
+        </g>
+      </g>
+    </svg>
+  );
+};
+const DeleteIconButton = () => {
+  return (
+    <svg
+      id="Page-1"
+      xmlns="http://www.w3.org/2000/svg"
+      width="19.408"
+      height="24.953"
+      viewBox="0 0 19.408 24.953"
+    >
+      <g id="Core">
+        <g id="delete">
+          <path
+            id="Shape"
+            d="M1.386,22.181a2.781,2.781,0,0,0,2.773,2.773h11.09a2.781,2.781,0,0,0,2.773-2.773V5.545H1.386V22.181ZM19.408,1.386H14.556L13.17,0H6.238L4.852,1.386H0V4.159H19.408V1.386Z"
+            fill="#f44336"
+            fill-rule="evenodd"
+          />
+        </g>
+      </g>
+    </svg>
+  );
+};
 const YearsIcon = () => {
   return (
     <svg
@@ -272,74 +407,6 @@ const LocationIcon = () => {
         d="M.857,0c-.29,0-.719-.031-1,0a8.173,8.173,0,0,1,7,7.987,7.823,7.823,0,0,1-1,3.994,23.462,23.462,0,0,1-3,3.994,25.433,25.433,0,0,1-3,3c.4.345.972.977,1,1,.053.041-.063,0,0,0s-.053.041,0,0a34.524,34.524,0,0,0,4-3.994,23.467,23.467,0,0,0,3-3.994,7.823,7.823,0,0,0,1-3.994A8.212,8.212,0,0,0,.857,0Z"
         transform="translate(7.143 0.014)"
       />
-    </svg>
-  );
-};
-const ProfileBlueIcon = () => {
-  return (
-    <svg
-      className="profile_blue"
-      xmlns="http://www.w3.org/2000/svg"
-      width="17.379"
-      height="20.833"
-      viewBox="0 0 17.379 20.833"
-    >
-      <defs></defs>
-      <path
-        class="a"
-        d="M536.725,535.445a5.01,5.01,0,0,0,2.31-.75,8.932,8.932,0,0,0,.766-.5,1.789,1.789,0,0,1,1.464-.293,3.9,3.9,0,0,1,2.918,2.16,8.836,8.836,0,0,1,.881,2.914,13.919,13.919,0,0,1,.126,2.29,3.34,3.34,0,0,1-2.747,3.288,1.387,1.387,0,0,0-.429.081h-.081a.22.22,0,0,0-.2,0h-5.373a.431.431,0,0,1-.066-.311q0-4.263,0-8.525c0-.335,0-.335.334-.342A.25.25,0,0,0,536.725,535.445Z"
-        transform="translate(-527.815 -523.803)"
-      />
-      <path
-        class="a"
-        d="M378.6,535.389c-.011.007-.022.019-.034.021-.332.059-.332.058-.332.408q0,4.381,0,8.762h-5.413c-.273-.095-.562-.119-.837-.21a3.252,3.252,0,0,1-2.255-2.836,11.066,11.066,0,0,1,.663-4.848,4.339,4.339,0,0,1,1.99-2.431,4.146,4.146,0,0,1,1.837-.451,1.109,1.109,0,0,1,.63.2c.331.211.66.427.995.633a4.883,4.883,0,0,0,2.272.745C378.279,535.4,378.442,535.388,378.6,535.389Z"
-        transform="translate(-369.694 -523.748)"
-      />
-      <path
-        class="a"
-        d="M643.2,744.754a.137.137,0,0,1,.2,0Z"
-        transform="translate(-629.285 -723.921)"
-      />
-      <path
-        class="a"
-        d="M536.317,336.132a4.817,4.817,0,0,1,3.807,1.723,4.567,4.567,0,0,1,1.127,2.259,5.057,5.057,0,0,1-3.9,5.954,2.784,2.784,0,0,1-.663.073c-.419.055-.438.041-.438-.362q0-4.649,0-9.3C536.25,336.362,536.224,336.234,536.317,336.132Z"
-        transform="translate(-527.773 -336.131)"
-      />
-      <path
-        class="a"
-        d="M444.242,336.123q0,4.9,0,9.809c0,.147.033.219.191.2a1.16,1.16,0,0,1,.183,0,2.523,2.523,0,0,1-.965-.019,4.572,4.572,0,0,1-2.446-1,4.943,4.943,0,0,1-1.935-3.437,5.022,5.022,0,0,1,2.983-5.153A4.577,4.577,0,0,1,444.242,336.123Z"
-        transform="translate(-435.698 -336.122)"
-      />
-    </svg>
-  );
-};
-const BagBlueIcon = () => {
-  return (
-    <svg
-      className="bag_blue"
-      xmlns="http://www.w3.org/2000/svg"
-      width="20.138"
-      height="17.709"
-      viewBox="0 0 20.138 17.709"
-    >
-      <defs></defs>
-      <g transform="translate(-335.996 -360.654)">
-        <path
-          class="a"
-          d="M356.134,424v13.019a.411.411,0,0,0-.028.073,1.754,1.754,0,0,1-1.792,1.5q-8.248.005-16.5-.006a1.969,1.969,0,0,1-.813-.182,1.73,1.73,0,0,1-1.01-1.7q0-6.242,0-12.484v-.163a.345.345,0,0,1,.089.156l1.994,5.976a1.787,1.787,0,0,0,1.843,1.326h3.193c0,.192,0,.361,0,.53a.6.6,0,0,0,.648.649q2.3,0,4.6,0a.6.6,0,0,0,.651-.646c0-.174,0-.348,0-.533h3.17a1.79,1.79,0,0,0,1.87-1.342q1-3,2-6C356.077,424.115,356.108,424.058,356.134,424Z"
-          transform="translate(0 -60.231)"
-        />
-        <path
-          class="a"
-          d="M356.937,363.024h4.926a6.619,6.619,0,0,1,0-.768,1.728,1.728,0,0,1,1.745-1.589q2.359-.025,4.719,0a1.76,1.76,0,0,1,1.773,1.777c.005.183,0,.366,0,.568h4.926l-.073.222-2.1,6.314a.657.657,0,0,1-.763.553h-3.167c0-.194,0-.375,0-.556a.587.587,0,0,0-.615-.622q-2.33-.005-4.66,0a.59.59,0,0,0-.623.634c0,.175,0,.351,0,.545h-.151q-1.544,0-3.087,0a.6.6,0,0,1-.656-.453q-1.093-3.267-2.179-6.536A.785.785,0,0,1,356.937,363.024Zm11.99-.011c0-.173,0-.323,0-.473a.611.611,0,0,0-.7-.7H365.7c-.681,0-1.362,0-2.043,0a.55.55,0,0,0-.594.439,4.717,4.717,0,0,0-.008.732Z"
-          transform="translate(-19.911)"
-        />
-        <path
-          class="a"
-          d="M508.618,554.219H505.1v-1.158h3.513Z"
-          transform="translate(-160.795 -182.947)"
-        />
-      </g>
     </svg>
   );
 };

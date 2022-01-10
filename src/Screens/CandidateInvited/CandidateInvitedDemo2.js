@@ -35,10 +35,8 @@ import ListItemText from "@material-ui/core/ListItemText";
 import SearchIcon from "@material-ui/icons/Search";
 import CandidateInvitedEmpty from "./CandidateInvitedEmpty";
 import CandidateInvitedBoxList from "./CandidateInvitedBoxList";
-import CandidateInvitedAppliedList from "./Applied/CandidateInvitedAppliedList";
-import CandidateInvitedRespondList from "./Respond/CandidateInvitedRespondList";
+import CandidateInvitedBoxListDelete from "./CandidateInvitedBoxListDelete";
 import CandidateBoxDropdown from "./CandidateBoxDropdown";
-import CandidateExcelDivArea from "./CandidateExcelDivArea";
 import JIElogo from "../../images/JIE_logo.svg";
 require("dotenv").config();
 const BASE_URL = process.env.REACT_APP_BASE_URL;
@@ -106,30 +104,16 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(3),
   },
 }));
-function TabPanel(props) {
-  const { children, value, index, ...other } = props;
-
-  return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`simple-tabpanel-${index}`}
-      aria-labelledby={`simple-tab-${index}`}
-      {...other}
-    >
-      {value === index && (
-        <Box sx={{ p: 3 }}>
-          <Typography>{children}</Typography>
-        </Box>
-      )}
-    </div>
-  );
-}
 
 function CandidateInvitedDemo() {
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
+  const [valuePopper, setValuePopper] = React.useState(0);
+
+  const handleChangeOtherDetTab = (event, newValueOtherDet) => {
+    setValuePopper(newValueOtherDet);
+  };
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -369,13 +353,13 @@ function CandidateInvitedDemo() {
           <Grid container direction="row" justifyContent="space-between">
             <Grid item xs={12}>
               <Grid container direction="row" justifyContent="space-between">
-                <Grid item md={9}>
+                <Grid item lg={7} md={12} xs={12}>
                   <Typography variant="span" className="pagetitle">
-                    Candidates Invited
+                    Candidate Invited
                   </Typography>
                   <Box
                     component="div"
-                    className="dis_flex fullwidth_100percent"
+                    className="dis_flex topheader fullwidth_100percent"
                   >
                     <Autocomplete
                       debug
@@ -402,12 +386,9 @@ function CandidateInvitedDemo() {
                         return <TextField {...params} />;
                       }}
                     />
-                    <Button className="darkbluecolor whitecolortext border8 pe-4 ps-4">
-                      Search
-                    </Button>
                   </Box>
                 </Grid>
-                <Grid item md={3}>
+                <Grid item md={5}>
                   <img
                     src={BASE_URL + InvitedBG}
                     alt=""
@@ -422,63 +403,106 @@ function CandidateInvitedDemo() {
             <Grid Itemn xs={12}>
               {/* <CandidateExcelDivArea /> */}
             </Grid>
-            <Grid item xs={12} className="empty mt-4 mb-4 pb-4">
-              {/* <CandidateInvitedEmpty /> */}
-
-              <Box component="div" className="listarea">
-                <Grid
-                  container
-                  direction="row"
-                  justifyContent="space-between"
-                  spacing={2}
+            <Box component="div" className="privatejobtab">
+              <AppBar position="static" className="divtabroot">
+                <Tabs
+                  value={valuePopper}
+                  onChange={handleChangeOtherDetTab}
+                  aria-label="simple tabs example"
                 >
-                  <Grid item lg={4} md={4} xs={12}>
-                    <CandidateInvitedBoxList />
-                  </Grid>
-                  <Grid item lg={4} md={4} xs={12}>
-                    <CandidateInvitedBoxList />
-                  </Grid>
-                  <Grid item lg={4} md={4} xs={12}>
-                    <CandidateInvitedBoxList />
-                  </Grid>
-                </Grid>
-                <Grid
-                  container
-                  direction="row"
-                  justifyContent="space-between"
-                  spacing={2}
-                >
-                  <Grid item lg={4} md={4} xs={12}>
-                    <CandidateInvitedBoxList />
-                  </Grid>
-                  <Grid item lg={4} md={4} xs={12}>
-                    <CandidateInvitedBoxList />
-                  </Grid>
-                  <Grid item lg={4} md={4} xs={12}>
-                    <CandidateInvitedBoxList />
-                  </Grid>
-                </Grid>
-              </Box>
+                  <Tab
+                    label="Jobs Posted"
+                    {...a11yProps(0)}
+                    icon={<JobPosted />}
+                    className="jobposttab"
+                  />
+                  <Tab
+                    label="Private Jobs"
+                    {...a11yProps(1)}
+                    icon={<PrivateJobs />}
+                    className="jobposttab"
+                  />
+                </Tabs>
+              </AppBar>
+              <TabPanel
+                value={valuePopper}
+                index={0}
+                className="jobposttabarea"
+              >
+                <Grid item xs={12} className="empty mb-4 pb-4">
+                  {/* <CandidateSavedEmpty /> */}
 
-              {/* <Box component="div" className="tabdiv">
-                <Box component="div">
-                  <Tabs
-                    value={value}
-                    onChange={handleChange}
-                    aria-label="basic tabs example"
-                  >
-                    <Tab label="Applied" {...a11yProps(0)} />
-                    <Tab label="Yet to Respond" {...a11yProps(1)} />
-                  </Tabs>
-                </Box>
-                <TabPanel value={value} index={0}>
-                  <CandidateInvitedAppliedList />
-                </TabPanel>
-                <TabPanel value={value} index={1}>
-                  <CandidateInvitedRespondList />
-                </TabPanel>
-              </Box> */}
-            </Grid>
+                  <Box component="div" className="listarea">
+                    <Grid
+                      container
+                      direction="row"
+                      justifyContent="space-between"
+                      spacing={2}
+                    >
+                      <Grid item xl={4} lg={6} md={6} xs={12}>
+                        <CandidateInvitedBoxList />
+                      </Grid>
+                      <Grid item xl={4} lg={6} md={6} xs={12}>
+                        <CandidateInvitedBoxList />
+                      </Grid>
+                      <Grid item xl={4} lg={6} md={6} xs={12}>
+                        <CandidateInvitedBoxList />
+                      </Grid>
+                      <Grid item xl={4} lg={6} md={6} xs={12}>
+                        <CandidateInvitedBoxList />
+                      </Grid>
+                      <Grid item xl={4} lg={6} md={6} xs={12}>
+                        <CandidateInvitedBoxList />
+                      </Grid>
+                      <Grid item xl={4} lg={6} md={6} xs={12}>
+                        <CandidateInvitedBoxList />
+                      </Grid>
+                    </Grid>
+                  </Box>
+
+                  {/* <CandidateSavedList /> */}
+                </Grid>
+              </TabPanel>
+              <TabPanel
+                value={valuePopper}
+                index={1}
+                className="privatetabarea"
+              >
+                <Grid item xs={12} className="empty mb-4 pb-4">
+                  {/* <CandidateSavedEmpty /> */}
+
+                  <Box component="div" className="listarea">
+                    <Grid
+                      container
+                      direction="row"
+                      justifyContent="space-between"
+                      spacing={2}
+                    >
+                      <Grid item xl={4} lg={6} md={6} xs={12}>
+                        <CandidateInvitedBoxListDelete />
+                      </Grid>
+                      <Grid item xl={4} lg={6} md={6} xs={12}>
+                        <CandidateInvitedBoxListDelete />
+                      </Grid>
+                      <Grid item xl={4} lg={6} md={6} xs={12}>
+                        <CandidateInvitedBoxListDelete />
+                      </Grid>
+                      <Grid item xl={4} lg={6} md={6} xs={12}>
+                        <CandidateInvitedBoxListDelete />
+                      </Grid>
+                      <Grid item xl={4} lg={6} md={6} xs={12}>
+                        <CandidateInvitedBoxListDelete />
+                      </Grid>
+                      <Grid item xl={4} lg={6} md={6} xs={12}>
+                        <CandidateInvitedBoxListDelete />
+                      </Grid>
+                    </Grid>
+                  </Box>
+
+                  {/* <CandidateSavedList /> */}
+                </Grid>
+              </TabPanel>
+            </Box>
           </Grid>
         </Box>
       </main>
@@ -494,10 +518,29 @@ const search = [
   { name: "Soumya", id: 5 },
   { name: "andugundutandapani", id: 6 },
 ];
+function TabPanel(props) {
+  const { children, value, index, ...other } = props;
+
+  return (
+    <div
+      role="tabpanel"
+      hidden={value !== index}
+      id={`simple-tabpanel-${index}`}
+      aria-labelledby={`simple-tab-${index}`}
+      {...other}
+    >
+      {value === index && (
+        <Box p={3}>
+          <Typography>{children}</Typography>
+        </Box>
+      )}
+    </div>
+  );
+}
 TabPanel.propTypes = {
   children: PropTypes.node,
-  index: PropTypes.number.isRequired,
-  value: PropTypes.number.isRequired,
+  index: PropTypes.any.isRequired,
+  value: PropTypes.any.isRequired,
 };
 
 function a11yProps(index) {
@@ -506,6 +549,73 @@ function a11yProps(index) {
     "aria-controls": `simple-tabpanel-${index}`,
   };
 }
+const JobPosted = () => {
+  return (
+    <svg
+      id="sticky-notes"
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+    >
+      <path
+        id="Path_4408"
+        data-name="Path 4408"
+        d="M24,17.5v.75a.749.749,0,0,1-.22.53l-5,5a.749.749,0,0,1-.53.22H17.5V18.25a.755.755,0,0,1,.75-.75Z"
+        fill="#fff"
+      />
+      <path
+        id="Path_4409"
+        data-name="Path 4409"
+        d="M21.25,5h-7.5V7.25a1.75,1.75,0,0,1-3.5,0V5H2.75A2.748,2.748,0,0,0,0,7.75v13.5A2.748,2.748,0,0,0,2.75,24H16.5V18.25a1.752,1.752,0,0,1,1.75-1.75H24V7.75A2.748,2.748,0,0,0,21.25,5ZM14,19.5H4.75a.75.75,0,0,1,0-1.5H14a.75.75,0,0,1,0,1.5Zm5.25-4H4.75a.75.75,0,0,1,0-1.5h14.5a.75.75,0,0,1,0,1.5Zm0-4H4.75a.75.75,0,0,1,0-1.5h14.5a.75.75,0,0,1,0,1.5Z"
+        fill="#fff"
+      />
+      <path
+        id="Path_4410"
+        data-name="Path 4410"
+        d="M12,8a.75.75,0,0,1-.75-.75V3.5a.75.75,0,0,1,1.5,0V7.25A.75.75,0,0,1,12,8Z"
+        fill="#fff"
+      />
+      <path
+        id="Path_4411"
+        data-name="Path 4411"
+        d="M12,4a2,2,0,1,1,2-2A2,2,0,0,1,12,4Z"
+        fill="#fff"
+      />
+    </svg>
+  );
+};
+const PrivateJobs = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="21.007"
+      viewBox="0 0 24 21.007"
+    >
+      <g id="lock" transform="translate(0 -2.993)">
+        <path
+          id="Path_4413"
+          data-name="Path 4413"
+          d="M14.25,3H14S3.016,2.984,3,3H2.75A2.748,2.748,0,0,0,0,5.75v12.5A2.748,2.748,0,0,0,2.75,21H13V18.75a3.468,3.468,0,0,1,.23-1.25H3.75a.75.75,0,0,1,0-1.5h9.5a.748.748,0,0,1,.63.35,3.768,3.768,0,0,1,1.12-.9,4.509,4.509,0,0,1,2-3.69V5.75A2.748,2.748,0,0,0,14.25,3Zm-1,10.25H3.75a.75.75,0,0,1,0-1.5h9.5a.75.75,0,0,1,0,1.5Zm0-4.25H3.75a.75.75,0,0,1,0-1.5h9.5a.75.75,0,0,1,0,1.5Z"
+          fill="#fff"
+        />
+        <path
+          id="Path_4414"
+          data-name="Path 4414"
+          d="M21.25,18.5h-3.5a.75.75,0,0,1-.75-.75V15.5a2.5,2.5,0,0,1,5,0v2.25A.75.75,0,0,1,21.25,18.5ZM18.5,17h2V15.5a1,1,0,0,0-2,0Z"
+          fill="#fff"
+        />
+        <path
+          id="Path_4415"
+          data-name="Path 4415"
+          d="M22.25,24h-5.5A1.752,1.752,0,0,1,15,22.25v-3.5A1.752,1.752,0,0,1,16.75,17h5.5A1.752,1.752,0,0,1,24,18.75v3.5A1.752,1.752,0,0,1,22.25,24Z"
+          fill="#fff"
+        />
+      </g>
+    </svg>
+  );
+};
 const ProfileDrawer = () => {
   return (
     <svg
